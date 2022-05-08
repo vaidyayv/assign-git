@@ -1,4 +1,28 @@
 • What is a gitignore file and what should it include for a Java project?
+answer - gitignore file maintains which files/folders shouldn't be tracked by git. For Java projects, many runtime files are created like compiled class files or different types of log files. These files are corresponding to the instance of the application running on a machine so they shouldn't be shared with others. This is where gitignore helps. Following are the standard files that are ignored by using gitignore -
+1. *.class
+2. *.log
+3. *.ctxt
+4. .mtj.tmp/
+5. *.jar
+6. *.war
+7. *.nar
+8. *.ear
+9. *.zip
+10. *.tar.gz
+11. *.rar
+12. hs_err_pid*
+
 • What does fast-forward in Git mean?
+fast-forward is a type of merging technic in git. In this type of merging, instead of applying commits to the target branch, git simply makes the target branch point towards the source branch current pointer.
+
 • Why should you have different branches?
+There are multiple reasons to have different branches. following are some of those reasons -
+1. Multiple branches may refer to multiple environments
+2. Deployment/release branches are the stable versions of code. Hence are used to deploy in higher environments. 
+3. By comparing branches, new code is easily identifiable and can be easily reviewed/tested
+4. To fix a bug or to develop a feature, it is treated as an independent task, hence, having an independent bugfix/feature branch for it helps in checking build/unit testing of the bug/feature
+5. At certain stages of the project, prototypes are created. Having branches for the prototypes helps in keeping them standalone for sharing and tracking purposes.
+
 • In a project how many remote Git repositories do you usually have?
+For a project usually, one single git repository is used. (In some cases, UI and Backend are stored in different repositories for DevOps purposes). The reason for this is, the main/master branch represents the primary source of the truth of the code. It lies in one repository only. Hence, there is no point in having new repositories. 
